@@ -13,6 +13,7 @@ export default function Banner({ className, image, width, height, alt }) {
           alt={alt}
           quality={100}
           objectFit='cover'
+          layout='responsive'
         />
       </a>
     </Link>

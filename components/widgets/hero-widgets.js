@@ -46,7 +46,7 @@ const HeroWidgets = () => {
     },
   ];
   return (
-    <>
+    <section id='hero-widget'>
       {articles.slice(0, 3).map((article) => {
         const {
           id,
@@ -104,7 +104,7 @@ const HeroWidgets = () => {
           </div>
         );
       })}
-    </>
+    </section>
   );
 };
 
