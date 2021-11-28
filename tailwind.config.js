@@ -13,12 +13,13 @@ module.exports = {
         },
       },
       fontFamily: {
-        font: "Heebo, sans-serif",
+        fontH: "Heebo, sans-serif",
+        fontM: "Mukta, sans-serif",
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

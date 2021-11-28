@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Banner({ image, width, height, alt }) {
+export default function Banner({ className, image, width, height, alt }) {
   return (
     <Link href='https://sumancfc.com'>
-      <a>
+      <a className={className}>
         <Image
           loading='lazy'
           src={image}

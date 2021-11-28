@@ -10,7 +10,12 @@ const MiddleHeader = () => {
             <Logo />
           </div>
           <div>
-            <Banner />
+            <Banner
+              image='/img/banner/top.gif'
+              width='700'
+              height='80'
+              alt='panchakanya steel'
+            />
           </div>
         </div>
       </div>
