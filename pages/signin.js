@@ -1,9 +1,10 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { API } from "../config";
 import { Context } from "../context";
+import { authenticate, signin } from "actions/auth";
 
 const SigninPage = () => {
   const [values, setValues] = useState({
@@ -12,9 +13,18 @@ const SigninPage = () => {
   });
 
   const { email, password } = values;
-  const { state, dispatch } = useContext(Context);
+  // const {
+  //   state: { user },
+  //   dispatch,
+  // } = useContext(Context);
+
+  // console.log(user);
 
   const router = useRouter();
+
+  // useEffect(() => {
+  //   if (user === null) router.push("/");
+  // }, [user]);
 
   //   logout function
   //   const logout = async () => {
@@ -25,28 +35,27 @@ const SigninPage = () => {
   //     router.push("/");
   //   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      const { data } = await axios.post(`${API}/signin`, {
-        email,
-        password,
-      });
+    setValues({ ...values, loading: true, error: false });
+    const user = { email, password };
 
-      dispatch({ type: "LOGIN", payload: data });
-
-      //save data on local storage
-      window.localStorage.setItem("user", JSON.stringify(data));
-
-      setValues({ ...values, email: "", password: "" });
-
-      toast.success("Signin Success");
-
-      router.push("/");
-    } catch (err) {
-      toast.error(err.response.data.error);
-    }
+    signin(user).then((data) => {
+      console.log(data);
+      if (data.error) {
+        setValues({ ...values, error: data.error, loading: false });
+        toast.error(data.error);
+      } else {
+        // save user token to cookie
+        // save user info to localstorage
+        // authenticate user
+        authenticate(data, () => {
+          toast.success("Signin Success");
+          router.push(`/`);
+        });
+      }
+    });
   };
 
   const handleChange = (name) => (e) => {
