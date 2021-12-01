@@ -1,22 +1,19 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { isAuth } from "../../actions/auth";
 import SideNav from "../dashboard/SideNav";
 import Logo from "../logo";
-import { Context } from "../../context";
-import { useRouter } from "next/router";
 
 const DashboardLayout = ({ children }) => {
-  const {
-    state: { user },
-    dispatch,
-  } = useContext(Context);
-
   const router = useRouter();
 
   useEffect(() => {
-    if (user === null) {
+    if (!isAuth()) {
+      router.push("/signin");
+    } else if (isAuth().role !== 1) {
       router.push("/");
     }
-  }, [user]);
+  }, []);
 
   return (
     <>
@@ -39,7 +36,7 @@ const DashboardLayout = ({ children }) => {
         <div className='col-span-1'>
           <SideNav />
         </div>
-        <div className='col-span-4 p-6'>{JSON.stringify(user)}</div>
+        <div className='col-span-4 p-6'></div>
       </div>
     </>
   );

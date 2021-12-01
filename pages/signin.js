@@ -1,39 +1,21 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import axios from "axios";
 import { toast } from "react-toastify";
-import { API } from "../config";
-import { Context } from "../context";
-import { authenticate, signin } from "actions/auth";
+import { signin, authenticate, isAuth } from "../actions/auth";
 
 const SigninPage = () => {
   const [values, setValues] = useState({
-    email: "",
-    password: "",
+    email: "sumanstha999@gmail.com",
+    password: "suman9",
   });
 
   const { email, password } = values;
-  // const {
-  //   state: { user },
-  //   dispatch,
-  // } = useContext(Context);
-
-  // console.log(user);
 
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (user === null) router.push("/");
-  // }, [user]);
-
-  //   logout function
-  //   const logout = async () => {
-  //     dispatch({ type: "LOGOUT" });
-  //     window.localStorage.removeItem("user");
-  //     const { data } = await axios.get(`${API}/signout`);
-  //     toast.success(data.message);
-  //     router.push("/");
-  //   };
+  useEffect(() => {
+    isAuth() && router.push("/");
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +24,6 @@ const SigninPage = () => {
     const user = { email, password };
 
     signin(user).then((data) => {
-      console.log(data);
       if (data.error) {
         setValues({ ...values, error: data.error, loading: false });
         toast.error(data.error);
@@ -52,7 +33,11 @@ const SigninPage = () => {
         // authenticate user
         authenticate(data, () => {
           toast.success("Signin Success");
-          router.push(`/`);
+          if (isAuth() && isAuth().role === 1) {
+            router.push(`/admin`);
+          } else {
+            router.push(`/`);
+          }
         });
       }
     });

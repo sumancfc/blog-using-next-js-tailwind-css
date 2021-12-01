@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <Layout>
       <div className='container'>
-        {/* <div className='text-center py-5 border-b-2'>
+        <div className='text-center py-5 border-b-2'>
           <Banner
             image='/img/banner/ambe.jpg'
             width='1230'
@@ -17,9 +17,9 @@ const Home = () => {
           />
         </div>
 
-        <HeroWidgets /> */}
+        <HeroWidgets />
 
-        {/* <div className='text-center py-5 border-b-2'>
+        <div className='text-center py-5 border-b-2'>
           <Banner
             image='/img/banner/ambe.jpg'
             width='1230'
@@ -28,7 +28,7 @@ const Home = () => {
           />
         </div>
 
-        <NewsWidget /> */}
+        <NewsWidget />
 
         <div className='text-center py-5 border-b-2'>
           <Banner
@@ -40,6 +40,15 @@ const Home = () => {
         </div>
 
         <TechnologyWidget />
+
+        <div className='text-center py-5 border-b-2'>
+          <Banner
+            image='/img/banner/nmb.gif'
+            width='1230'
+            height='100'
+            alt='Ambe Cement'
+          />
+        </div>
       </div>
     </Layout>
   );

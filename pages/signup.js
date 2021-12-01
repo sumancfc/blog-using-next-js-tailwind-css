@@ -1,9 +1,9 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { API } from "../config";
-import { Context } from "context";
+import { isAuth } from "../actions/auth";
 
 const SignupPage = () => {
   const [values, setValues] = useState({
@@ -14,16 +14,11 @@ const SignupPage = () => {
 
   const { name, email, password } = values;
 
-  const {
-    state: { user },
-    dispatch,
-  } = useContext(Context);
-
   const router = useRouter();
 
   useEffect(() => {
-    if (user !== null) router.push("/");
-  }, [user]);
+    isAuth() && router.push("/");
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

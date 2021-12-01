@@ -31,6 +31,23 @@ export const signin = (user) => {
     .catch((err) => console.log(err));
 };
 
+//signout
+export const signout = (next) => {
+  removeCookie("token");
+  removeLocalStorage("user");
+  next();
+
+  return fetch(`${API}/signout`, {
+    method: "GET",
+  })
+    .then((response) => {
+      console.log("Signout Success");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 // set cookie
 export const setCookie = (key, value) => {
   if (process.browser) {
@@ -40,6 +57,7 @@ export const setCookie = (key, value) => {
   }
 };
 
+//remove cookie
 export const removeCookie = (key) => {
   if (process.browser) {
     cookie.remove(key, {
@@ -47,12 +65,14 @@ export const removeCookie = (key) => {
     });
   }
 };
+
 // get cookie
 export const getCookie = (key) => {
   if (process.browser) {
-    cookie.get(key);
+    return cookie.get(key);
   }
 };
+
 // localstorage
 export const setLocalStorage = (key, value) => {
   if (process.browser) {
@@ -60,11 +80,13 @@ export const setLocalStorage = (key, value) => {
   }
 };
 
+//remove data from localStorage
 export const removeLocalStorage = (key) => {
   if (process.browser) {
     localStorage.removeItem(key);
   }
 };
+
 // autheticate user by pass data to cookie and localstorage
 export const authenticate = (data, next) => {
   setCookie("token", data.token);
@@ -72,6 +94,7 @@ export const authenticate = (data, next) => {
   next();
 };
 
+//check authenticate user
 export const isAuth = () => {
   if (process.browser) {
     const cookieChecked = getCookie("token");

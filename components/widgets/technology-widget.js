@@ -8,7 +8,7 @@ const TechnologyWidget = () => {
       id: "1",
       title: "जाजरकोटमा बस दुर्घटना हुँदा ५ जनाको मृत्यु, २५ जना घाइते",
       link: "/hello",
-      articleImage: "/img/news/bhim.jpg",
+      articleImage: "/img/news/shankar.jpg",
     },
     {
       id: "2",
