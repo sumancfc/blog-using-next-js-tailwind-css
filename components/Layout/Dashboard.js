@@ -1,20 +1,7 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import { isAuth } from "../../actions/auth";
 import SideNav from "../dashboard/SideNav";
 import Logo from "../logo";
 
 const DashboardLayout = ({ children }) => {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!isAuth()) {
-      router.push("/signin");
-    } else if (isAuth().role !== 1) {
-      router.push("/");
-    }
-  }, []);
-
   return (
     <>
       <div className='bg-blog-black py-1 flex justify-between items-center'>
@@ -36,7 +23,7 @@ const DashboardLayout = ({ children }) => {
         <div className='col-span-1'>
           <SideNav />
         </div>
-        <div className='col-span-4 p-6'></div>
+        <div className='col-span-4 p-6'>{children}</div>
       </div>
     </>
   );

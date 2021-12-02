@@ -2,18 +2,18 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import DashboardLayout from "@/components/Layout/Dashboard";
 import { getCookie } from "@/actions/auth";
-import { createCategory, getAllCategories } from "@/actions/category";
+import { createTags, getAllTags } from "@/actions/tags";
 import Admin from "@/components/admin/Admin";
 
-const Category = () => {
+const Tags = () => {
   const [values, setValues] = useState({
     name: "",
     slug: "",
-    categories: [],
+    tags: [],
     reload: false,
   });
 
-  const { name, slug, categories, reload } = values;
+  const { name, slug, tags, reload } = values;
 
   const token = getCookie("token");
 
@@ -22,12 +22,12 @@ const Category = () => {
   }, [reload]);
 
   const loadCategories = () => {
-    getAllCategories()
+    getAllTags()
       .then((data) => {
         if (data.error) {
           toast.error(data.error);
         } else {
-          setValues({ ...values, categories: data });
+          setValues({ ...values, tags: data });
         }
       })
       .catch((err) => {
@@ -38,7 +38,7 @@ const Category = () => {
   const clickSubmit = (e) => {
     e.preventDefault();
 
-    createCategory({ name, slug }, token).then((data) => {
+    createTags({ name, slug }, token).then((data) => {
       if (data.error) {
         toast.error(data.error);
       } else {
@@ -63,13 +63,11 @@ const Category = () => {
   return (
     <DashboardLayout>
       <Admin>
-        <h1 className='text-3xl font-bold font-fontH tracking-wide'>
-          Category
-        </h1>
+        <h1 className='text-3xl font-bold font-fontH tracking-wide'>Tags</h1>
         <div className='w-full mt-5 flex flex-row justify-between'>
           <div className='w-2/5 mr-5'>
             <h2 className='text-2xl font-semibold font-fontH tracking-wide'>
-              Add category
+              Add Tags
             </h2>
             <div className='pt-5'>
               <form onSubmit={clickSubmit}>
@@ -78,7 +76,7 @@ const Category = () => {
                   className='w-full py-3 px-5 border focus:outline-none shadow-sm rounded-md'
                   value={name}
                   onChange={handleChange("name")}
-                  placeholder='Add Category'
+                  placeholder='Add Tag'
                   required
                 />
                 <input
@@ -93,24 +91,24 @@ const Category = () => {
                   type='submit'
                   className='mt-5 py-2 px-5 rounded-md bg-red-700 text-white text-lg capitalize font-fontH'
                 >
-                  Add Category
+                  Add Tag
                 </button>
               </form>
             </div>
           </div>
           <div className='w-3/5 ml-5'>
             <h2 className='text-2xl font-semibold font-fontH tracking-wide'>
-              All Categories
+              All Tags
             </h2>
 
             <div className=''>
-              {categories.map((cat) => {
+              {tags.map((t) => {
                 return (
                   <button
-                    key={cat._id}
+                    key={t._id}
                     className='m-4 py-2 px-5 rounded-md bg-red-700 text-white text-lg capitalize font-fontH'
                   >
-                    {cat.name}
+                    {t.name}
                   </button>
                 );
               })}
@@ -122,4 +120,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default Tags;

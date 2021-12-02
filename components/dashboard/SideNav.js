@@ -1,4 +1,5 @@
 import { CollectionIcon, HomeIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 
 const SideNav = () => {
   return (
@@ -7,7 +8,7 @@ const SideNav = () => {
         <ul className='flex flex-col w-full font-fontH'>
           <li className='my-px'>
             <a
-              href='#'
+              href='/admin'
               className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 bg-gray-100'
             >
               <span className='flex items-center justify-center text-lg text-gray-400'>
@@ -21,15 +22,25 @@ const SideNav = () => {
           </li>
 
           <li className='my-px'>
-            <a
-              href='#'
-              className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'
-            >
-              <span className='flex items-center justify-center text-lg text-gray-400'>
-                <CollectionIcon className='w-6 h-6' />
-              </span>
-              <span className='ml-3'>Categories</span>
-            </a>
+            <Link href='/admin/category'>
+              <a className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+                <span className='flex items-center justify-center text-lg text-gray-400'>
+                  <CollectionIcon className='w-6 h-6' />
+                </span>
+                <span className='ml-3'>Category</span>
+              </a>
+            </Link>
+          </li>
+
+          <li className='my-px'>
+            <Link href='/admin/tags'>
+              <a className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+                <span className='flex items-center justify-center text-lg text-gray-400'>
+                  <CollectionIcon className='w-6 h-6' />
+                </span>
+                <span className='ml-3'>Tag</span>
+              </a>
+            </Link>
           </li>
         </ul>
       </div>
