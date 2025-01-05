@@ -58,3 +58,6 @@ h6 {
   );
   z-index: 4;
 }
+.ql-editor {
+  min-height: 400px !important;
+}

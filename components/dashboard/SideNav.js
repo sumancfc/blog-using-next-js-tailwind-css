@@ -42,6 +42,17 @@ const SideNav = () => {
               </a>
             </Link>
           </li>
+
+          <li className='my-px'>
+            <Link href='/admin/blog'>
+              <a className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+                <span className='flex items-center justify-center text-lg text-gray-400'>
+                  <CollectionIcon className='w-6 h-6' />
+                </span>
+                <span className='ml-3'>Blog</span>
+              </a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
