@@ -1,56 +1,60 @@
-import Layout from "@/components/Layout";
-import Banner from "@/components/banner";
-import HeroWidgets from "@/components/widgets/hero-widgets";
-import NewsWidget from "@/components/widgets/news-widget";
-import TechnologyWidget from "@/components/widgets/technology-widget";
+import React from "react";
+// import Layout from "@/components/Layout";
+// import Banner from "@/components/banner";
+// import HeroWidgets from "@/components/widgets/hero-widgets";
+// import NewsWidget from "@/components/widgets/news-widget";
+// import TechnologyWidget from "@/components/widgets/technology-widget";
 
 const Home = () => {
   return (
-    <Layout>
-      <div className='container'>
-        <div className='text-center py-5 border-b-2'>
-          <Banner
-            image='/img/banner/ambe.jpg'
-            width='1230'
-            height='100'
-            alt='Ambe Cement'
-          />
-        </div>
+    <>
+      <h1>Hello</h1>
+    </>
+    // <Layout>
+    //   <div className='container'>
+    //     <div className='text-center py-5 border-b-2'>
+    //       <Banner
+    //         image='/img/banner/ambe.jpg'
+    //         width='1230'
+    //         height='100'
+    //         alt='Ambe Cement'
+    //       />
+    //     </div>
 
-        <HeroWidgets />
+    //     <HeroWidgets />
 
-        <div className='text-center py-5 border-b-2'>
-          <Banner
-            image='/img/banner/ambe.jpg'
-            width='1230'
-            height='100'
-            alt='Ambe Cement'
-          />
-        </div>
+    //     <div className='text-center py-5 border-b-2'>
+    //       <Banner
+    //         image='/img/banner/ambe.jpg'
+    //         width='1230'
+    //         height='100'
+    //         alt='Ambe Cement'
+    //       />
+    //     </div>
 
-        <NewsWidget />
+    //     <NewsWidget />
 
-        <div className='text-center py-5 border-b-2'>
-          <Banner
-            image='/img/banner/nmb.gif'
-            width='1230'
-            height='100'
-            alt='Ambe Cement'
-          />
-        </div>
+    //     <div className='text-center py-5 border-b-2'>
+    //       <Banner
+    //         image='/img/banner/nmb.gif'
+    //         width='1230'
+    //         height='100'
+    //         alt='Ambe Cement'
+    //       />
+    //     </div>
 
-        <TechnologyWidget />
+    //     <TechnologyWidget />
 
-        <div className='text-center py-5 border-b-2'>
-          <Banner
-            image='/img/banner/nmb.gif'
-            width='1230'
-            height='100'
-            alt='Ambe Cement'
-          />
-        </div>
-      </div>
-    </Layout>
+    //     <div className='text-center py-5 border-b-2'>
+    //       <Banner
+    //         image='/img/banner/nmb.gif'
+    //         width='1230'
+    //         height='100'
+    //         alt='Ambe Cement'
+    //       />
+    //     </div>
+    //   </div>
+    // </Layout>
   );
 };
 

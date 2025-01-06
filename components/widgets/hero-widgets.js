@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ClockIcon, ChatAltIcon } from "@heroicons/react/outline";
+import { ClockIcon, ChatAltIcon } from "@heroicons/react/24/outline";
 
 const HeroWidgets = () => {
   const articles = [
@@ -61,7 +61,7 @@ const HeroWidgets = () => {
         return (
           <div className='mt-10 pb-10 border-b-2' key={id}>
             <h2 className='text-center'>
-              <Link href={link}>
+              <Link href={link} legacyBehavior>
                 <a className='text-7xl font-semibold leading-snug'>{title}</a>
               </Link>
             </h2>
@@ -71,7 +71,7 @@ const HeroWidgets = () => {
                   src={profile}
                   width={60}
                   height={60}
-                  objectFit='cover'
+                  // objectFit='cover'
                   className='rounded-full'
                 />
                 <p className='ml-3'>{postedBy}</p>
@@ -88,15 +88,15 @@ const HeroWidgets = () => {
               </div>
             </div>
             <div className='mt-4'>
-              <Link href={link}>
+              <Link href={link} legacyBehavior>
                 <a>
                   <Image
                     className=''
                     src={articleImage}
-                    layout='responsive'
+                    // layout='responsive'
                     width='1230'
                     height='510'
-                    objectFit='cover'
+                    // objectFit='cover'
                   />
                 </a>
               </Link>

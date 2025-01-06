@@ -3,19 +3,17 @@ import Link from "next/link";
 
 export default function Banner({ className, image, width, height, alt }) {
   return (
-    <Link href='https://sumancfc.com'>
-      <a className={className}>
-        <Image
-          loading='lazy'
-          src={image}
-          width={width}
-          height={height}
-          alt={alt}
-          quality={100}
-          objectFit='cover'
-          layout='responsive'
-        />
-      </a>
+    <Link href='https://suman-stha.com.np' className={className}>
+      <Image
+        loading='lazy'
+        src={image}
+        width={width}
+        height={height}
+        alt={alt}
+        quality={100}
+        // objectFit='cover'
+        // layout='responsive'
+      />
     </Link>
   );
 }
