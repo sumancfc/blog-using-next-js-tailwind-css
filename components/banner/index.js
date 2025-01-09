@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Banner({ className, image, width, height, alt }) {
   return (
-    <Link href='https://suman-stha.com.np' className={className}>
+    <Link href='https://suman-stha.com.np' className={className} legacyBehavior>
       <Image
         loading='lazy'
         src={image}
