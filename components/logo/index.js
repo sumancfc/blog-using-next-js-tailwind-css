@@ -1,27 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Logo({ image, width, height, alt }) {
+export default function Logo({
+  image,
+  width = 300,
+  height = 60,
+  alt = "Website Logo",
+}) {
   return (
-    <Link href='/' legacyBehavior>
-      <a>
-        <Image
-          loading='lazy'
-          src={image}
-          width={width}
-          height={height}
-          alt={alt}
-          quality={100}
-          // objectFit='cover'
-        />
-      </a>
+    <Link href='/'>
+      <Image
+        src={image}
+        width={width}
+        height={height}
+        alt={alt}
+        quality={100}
+      />
     </Link>
   );
 }
-
-Logo.defaultProps = {
-  image: "/img/logo/logo.png",
-  width: "300",
-  height: "60",
-  alt: "React Next Js Blog Logo",
-};

@@ -22,35 +22,38 @@ const SideNav = () => {
           </li>
 
           <li className='my-px'>
-            <Link href='/admin/category' legacyBehavior>
-              <a className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
-                <span className='flex items-center justify-center text-lg text-gray-400'>
-                  {/* <CollectionIcon className='w-6 h-6' /> */}
-                </span>
-                <span className='ml-3'>Category</span>
-              </a>
+            <Link
+              href='/admin/category'
+              className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'
+            >
+              <span className='flex items-center justify-center text-lg text-gray-400'>
+                {/* <CollectionIcon className='w-6 h-6' /> */}
+              </span>
+              <span className='ml-3'>Category</span>
             </Link>
           </li>
 
           <li className='my-px'>
-            <Link href='/admin/tags' legacyBehavior>
-              <a className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
-                <span className='flex items-center justify-center text-lg text-gray-400'>
-                  {/* <CollectionIcon className='w-6 h-6' /> */}
-                </span>
-                <span className='ml-3'>Tag</span>
-              </a>
+            <Link
+              href='/admin/tags'
+              className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'
+            >
+              <span className='flex items-center justify-center text-lg text-gray-400'>
+                {/* <CollectionIcon className='w-6 h-6' /> */}
+              </span>
+              <span className='ml-3'>Tag</span>
             </Link>
           </li>
 
           <li className='my-px'>
-            <Link href='/admin/blog' legacyBehavior>
-              <a className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
-                <span className='flex items-center justify-center text-lg text-gray-400'>
-                  {/* <CollectionIcon className='w-6 h-6' /> */}
-                </span>
-                <span className='ml-3'>Blog</span>
-              </a>
+            <Link
+              href='/admin/blog'
+              className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'
+            >
+              <span className='flex items-center justify-center text-lg text-gray-400'>
+                {/* <CollectionIcon className='w-6 h-6' /> */}
+              </span>
+              <span className='ml-3'>Blog</span>
             </Link>
           </li>
         </ul>

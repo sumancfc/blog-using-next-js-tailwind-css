@@ -127,13 +127,11 @@ const NewsWidget = () => {
             const { id, title, link, articleImage } = article;
             return (
               <div className='w-1/2 flex mb-5' key={id}>
-                <Link href={link} legacyBehavior>
-                  <a className='flex flex-auto'>
-                    <img src={articleImage} className='w-1/3' />
-                    <h3 className='ml-6 mr-3 text-xl font-fontM font-semibold leading-normal'>
-                      {title}
-                    </h3>
-                  </a>
+                <Link href={link} className='flex flex-auto'>
+                  <img src={articleImage} className='w-1/3' />
+                  <h3 className='ml-6 mr-3 text-xl font-fontM font-semibold leading-normal'>
+                    {title}
+                  </h3>
                 </Link>
               </div>
             );

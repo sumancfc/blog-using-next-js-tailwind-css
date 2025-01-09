@@ -12,68 +12,46 @@ const Menu = () => {
           <div>
             <ul className='flex items-center font-bold text-xl space-x-12 tracking-wide'>
               <li>
-                <Link href='/' legacyBehavior>
-                  <a>होमपेज</a>
-                </Link>
+                <Link href='/'>होमपेज</Link>
               </li>
               <li>
-                <Link href='/' legacyBehavior>
-                  <a>समाचार</a>
-                </Link>
+                <Link href='/'>समाचार</Link>
                 <ul></ul>
               </li>
               <li>
-                <Link href='/' legacyBehavior>
-                  <a>विजनेस</a>
-                </Link>
+                <Link href='/'>विजनेस</Link>
               </li>
               <li>
-                <Link href='/' legacyBehavior>
-                  <a>जीवनशैली</a>
-                </Link>
+                <Link href='/'>जीवनशैली</Link>
               </li>
               <li>
-                <Link href='/' legacyBehavior>
-                  <a>मनोरन्जन</a>
-                </Link>
+                <Link href='/'>मनोरन्जन</Link>
               </li>
               <li>
-                <Link href='/' legacyBehavior>
-                  <a>विचार</a>
-                </Link>
+                <Link href='/'>विचार</Link>
               </li>
               <li>
-                <Link href='/' legacyBehavior>
-                  <a>प्रवास</a>
-                </Link>
+                <Link href='/'>प्रवास</Link>
               </li>
               <li>
-                <Link href='/' legacyBehavior>
-                  <a>खेलकुद</a>
-                </Link>
+                <Link href='/'>खेलकुद</Link>
               </li>
               <li>
-                <Link href='/' legacyBehavior>
-                  <a>अन्य</a>
-                </Link>
+                <Link href='/'>अन्य</Link>
               </li>
             </ul>
           </div>
-          {/* Right Menu */}
 
+          {/* Right Menu */}
           <div>
             <ul className='flex flex-row space-x-4'>
               {!isAuth() && (
                 <>
                   <li>
-                    <Link href='/signin' legacyBehavior>
-                      <a>Sign In</a>
-                    </Link>
+                    <Link href='/signin'>Sign In</Link>
                   </li>
                   <li>
-                    <Link href='/signup' legacyBehavior>
-                      <a>Sign Up</a>
-                    </Link>
+                    <Link href='/signup'>Sign Up</Link>
                   </li>
                 </>
               )}

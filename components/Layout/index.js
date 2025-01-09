@@ -5,7 +5,6 @@ const Layout = ({ children }) => {
     <>
       <Header />
       {children}
-      <div>विश्वका निख्लाम कविताहरू</div>
     </>
   );
 };

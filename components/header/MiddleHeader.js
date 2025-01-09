@@ -7,7 +7,7 @@ const MiddleHeader = () => {
       <div className='container'>
         <div className='flex items-center justify-between'>
           <div>
-            <Logo />
+            <Logo image='/img/logo/logo.png' />
           </div>
           <div>
             <Banner

@@ -61,8 +61,8 @@ const HeroWidgets = () => {
         return (
           <div className='mt-10 pb-10 border-b-2' key={id}>
             <h2 className='text-center'>
-              <Link href={link} legacyBehavior>
-                <a className='text-7xl font-semibold leading-snug'>{title}</a>
+              <Link href={link} className='text-7xl font-semibold leading-snug'>
+                {title}
               </Link>
             </h2>
             <div className='flex items-center justify-center space-x-8'>
@@ -71,7 +71,6 @@ const HeroWidgets = () => {
                   src={profile}
                   width={60}
                   height={60}
-                  // objectFit='cover'
                   className='rounded-full'
                 />
                 <p className='ml-3'>{postedBy}</p>
@@ -88,17 +87,13 @@ const HeroWidgets = () => {
               </div>
             </div>
             <div className='mt-4'>
-              <Link href={link} legacyBehavior>
-                <a>
-                  <Image
-                    className=''
-                    src={articleImage}
-                    // layout='responsive'
-                    width='1230'
-                    height='510'
-                    // objectFit='cover'
-                  />
-                </a>
+              <Link href={link}>
+                <Image
+                  className=''
+                  src={articleImage}
+                  width='1230'
+                  height='510'
+                />
               </Link>
             </div>
           </div>
