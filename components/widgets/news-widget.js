@@ -87,23 +87,21 @@ const NewsWidget = () => {
               >
                 <div className='w-1/2'>
                   <Link href={link}>
-                    <a>
-                      <Image
-                        src={articleImage}
-                        width='430'
-                        height='415'
-                        // objectFit='cover'
-                        // layout='responsive'
-                      />
-                    </a>
+                    <Image
+                      src={articleImage}
+                      width='430'
+                      height='415'
+                      alt={title}
+                    />
                   </Link>
                 </div>
                 <div className='ml-10 w-1/2'>
                   <h3 className='pr-24'>
-                    <Link href={link}>
-                      <a className='text-4xl font-fontM font-semibold leading-normal'>
-                        {title}
-                      </a>
+                    <Link
+                      href={link}
+                      className='text-4xl font-fontM font-semibold leading-normal'
+                    >
+                      {title}
                     </Link>
                   </h3>
                   <p className='mt-5 text-lg font-medium leading-normal pr-10'>
@@ -128,7 +126,7 @@ const NewsWidget = () => {
             return (
               <div className='w-1/2 flex mb-5' key={id}>
                 <Link href={link} className='flex flex-auto'>
-                  <img src={articleImage} className='w-1/3' />
+                  <img src={articleImage} className='w-1/3' alt={title} />
                   <h3 className='ml-6 mr-3 text-xl font-fontM font-semibold leading-normal'>
                     {title}
                   </h3>

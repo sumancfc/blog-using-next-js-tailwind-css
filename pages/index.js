@@ -18,7 +18,7 @@ const Home = () => {
           />
         </div>
 
-        {/*<HeroWidgets />*/}
+        <HeroWidgets />
 
         <div className='text-center py-5 border-b-2'>
           <Banner
@@ -29,7 +29,7 @@ const Home = () => {
           />
         </div>
 
-        {/**  <NewsWidget /> */}
+        <NewsWidget />
 
         <div className='text-center py-5 border-b-2'>
           <Banner

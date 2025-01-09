@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ClockIcon, ChatAltIcon } from "@heroicons/react/24/outline";
+import {
+  ClockIcon,
+  ChatBubbleLeftRightIcon,
+} from "@heroicons/react/24/outline";
 
 const HeroWidgets = () => {
   const articles = [
@@ -68,10 +71,12 @@ const HeroWidgets = () => {
             <div className='flex items-center justify-center space-x-8'>
               <div className='flex items-center'>
                 <Image
+                  loading='lazy'
                   src={profile}
                   width={60}
                   height={60}
                   className='rounded-full'
+                  alt={title}
                 />
                 <p className='ml-3'>{postedBy}</p>
               </div>
@@ -80,7 +85,7 @@ const HeroWidgets = () => {
                 <p>{createdAt}</p>
               </div>
               <div className='flex items-center'>
-                <ChatAltIcon className='w-8 h-8 text-blue-500 mr-3' />
+                <ChatBubbleLeftRightIcon className='w-8 h-8 text-blue-500 mr-3' />
                 <p className='text-blue-500 font-bold text-xl'>
                   {totalComment}
                 </p>

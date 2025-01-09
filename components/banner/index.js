@@ -15,10 +15,3 @@ export default function Banner({ className, image, width, height, alt }) {
     </Link>
   );
 }
-
-Banner.defaultProps = {
-  image: "/img/banner/top-banner.png",
-  width: "730",
-  height: "92",
-  alt: "Top Banner",
-};

@@ -53,7 +53,12 @@ const TechnologyWidget = () => {
               <div className='h-full mr-7 last:mr-0' key={id}>
                 <div className='post-overlay'>
                   <Link href={link} className='relative w-full h-tech block'>
-                    <Image src={articleImage} width='288' height='450' />
+                    <Image
+                      src={articleImage}
+                      width='288'
+                      height='450'
+                      alt={title}
+                    />
                     <div className='absolute w-full p-7 z-10 left-0 bottom-0'>
                       <h2 className='text-2xl font-semibold font-fontM mb-0 text-white'>
                         {title}
