@@ -12,48 +12,48 @@ const Menu = () => {
           <div>
             <ul className='flex items-center font-bold text-xl space-x-12 tracking-wide'>
               <li>
-                <Link href='/'>
+                <Link href='/' legacyBehavior>
                   <a>होमपेज</a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
+                <Link href='/' legacyBehavior>
                   <a>समाचार</a>
                 </Link>
                 <ul></ul>
               </li>
               <li>
-                <Link href='/'>
+                <Link href='/' legacyBehavior>
                   <a>विजनेस</a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
+                <Link href='/' legacyBehavior>
                   <a>जीवनशैली</a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
+                <Link href='/' legacyBehavior>
                   <a>मनोरन्जन</a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
+                <Link href='/' legacyBehavior>
                   <a>विचार</a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
+                <Link href='/' legacyBehavior>
                   <a>प्रवास</a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
+                <Link href='/' legacyBehavior>
                   <a>खेलकुद</a>
                 </Link>
               </li>
               <li>
-                <Link href='/'>
+                <Link href='/' legacyBehavior>
                   <a>अन्य</a>
                 </Link>
               </li>
@@ -66,12 +66,12 @@ const Menu = () => {
               {!isAuth() && (
                 <>
                   <li>
-                    <Link href='/signin'>
+                    <Link href='/signin' legacyBehavior>
                       <a>Sign In</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href='/signup'>
+                    <Link href='/signup' legacyBehavior>
                       <a>Sign Up</a>
                     </Link>
                   </li>

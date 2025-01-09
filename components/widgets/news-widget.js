@@ -92,8 +92,8 @@ const NewsWidget = () => {
                         src={articleImage}
                         width='430'
                         height='415'
-                        objectFit='cover'
-                        layout='responsive'
+                        // objectFit='cover'
+                        // layout='responsive'
                       />
                     </a>
                   </Link>
@@ -127,7 +127,7 @@ const NewsWidget = () => {
             const { id, title, link, articleImage } = article;
             return (
               <div className='w-1/2 flex mb-5' key={id}>
-                <Link href={link}>
+                <Link href={link} legacyBehavior>
                   <a className='flex flex-auto'>
                     <img src={articleImage} className='w-1/3' />
                     <h3 className='ml-6 mr-3 text-xl font-fontM font-semibold leading-normal'>

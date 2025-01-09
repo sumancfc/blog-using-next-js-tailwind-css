@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Logo({ image, width, height, alt }) {
   return (
-    <Link href='/'>
+    <Link href='/' legacyBehavior>
       <a>
         <Image
           loading='lazy'
@@ -12,7 +12,7 @@ export default function Logo({ image, width, height, alt }) {
           height={height}
           alt={alt}
           quality={100}
-          objectFit='cover'
+          // objectFit='cover'
         />
       </a>
     </Link>
